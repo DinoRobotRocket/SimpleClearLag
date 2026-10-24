@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "clearlag",
+  "version": "${version}",
+  "name": "SimpleClearLag",
+  "description": "A clearlag mod as my first modding project!",
+  "authors": [],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/clearlag/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.clearlag.client.ClearLagDataGenerator"
+    ],
+    "main": [
+      "org.clearlag.ClearLag"
+    ]
+  },
+  "mixins": [
+    "clearlag.mixins.json",
+    {
+      "config": "clearlag.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
